@@ -295,7 +295,7 @@ router.get('/-/healthy', async (req, res) => {
     res.json({ message: 'success' });
 });
 
-// check the account is exist
+// check the account exists
 async function checkAccount(option) {
     let tryCount = 0;
     while (tryCount < 10) {
