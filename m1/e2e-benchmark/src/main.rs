@@ -352,7 +352,7 @@ async fn run_simulation(stats: Arc<Mutex<Statistics>>, duration: Duration) -> Re
             let increment = (current_tps as f64 * 0.1) as usize + 1;
             current_tasks.fetch_add(increment, Ordering::Relaxed);
         } else {
-            // If current TPS is significantly lower than max, consider reducing increase rate or stop increasing
+            // If current TPS is significantly lower than max, consider reducing the increase rate or stop increasing
             let threshold = max_tps.load(Ordering::Relaxed) * 50 / 100; // 50% of max TPS as threshold
             if current_tps < threshold {
                 current_tasks.store(
