@@ -47,7 +47,7 @@ In order for the indexer to write to the database listening on port `5432`, you 
 ```shell
 docker run --name m1-indexer-db -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
 ```
-If you are not running the database, the trailer thread in the M1 subnet will panick. However, this will not affect the rest of the execution.
+If you are not running the database, the trailer thread in the M1 subnet will panic. However, this will not affect the rest of the execution.
 
 # WIP
 We are pursuing several improvements to local debugging and testing.
@@ -56,7 +56,7 @@ We are pursuing several improvements to local debugging and testing.
 We are working on a Docker Compose file which will allow you to run all services locally without additional setup.
 
 ## Simulated Network Activity Prologue
-We are working to provide a script which will simulate the network activity which to provide an option to test against a more realistic network. This will be particularly useful for testing the indexer.
+We are working to provide a script that will simulate the network activity to provide an option to test against a more realistic network. This will be particularly useful for testing the indexer.
 
 ## Improved Parameterization
 We are working on exposing more of the variables through to the runner scripts which network the services, for example, port numbers and the Avalanche node config.
