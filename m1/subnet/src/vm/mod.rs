@@ -570,7 +570,7 @@ impl Vm {
         };
     
         // Since the original structure includes an error field, we handle it by returning an error string if applicable
-        // In this context, error handling is managed above, so error here would be None.
+        // In this context, error handling is managed above, so the error here would be None.
         Ok(RpcRes {
             data: ret_str,
             header: header_str,
