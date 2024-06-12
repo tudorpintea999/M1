@@ -166,7 +166,7 @@ impl Block {
             return Ok(());
         }
 
-        // if already exists in database, it means it's already accepted
+        // if already exists in the database, it means it's already accepted
         // thus no need to verify once more
         if self.state.get_block(&self.id).await.is_ok() {
             log::debug!("block {} already verified", self.id);
@@ -196,7 +196,7 @@ impl Block {
             ));
         }
 
-        // ensure block timestamp is no more than an hour ahead of this nodes time
+        // ensure block timestamp is no more than an hour ahead of this node time
         if self.timestamp >= (Utc::now() + Duration::hours(1)).timestamp() as u64 {
             return Err(Error::new(
                 ErrorKind::InvalidData,
